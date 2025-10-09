@@ -39,7 +39,7 @@ export default function LoadingOverlay({ isLoading, message }: LoadingOverlayPro
           </div>
 
           <p className="text-sm text-gray-500 mt-6 text-center">
-            This may take 20-30 seconds. Please don't close this window.
+            This may take 20-30 seconds. Please don&apos;t close this window.
           </p>
         </div>
       </div>

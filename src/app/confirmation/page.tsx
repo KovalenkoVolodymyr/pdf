@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 
 export default function ConfirmationPage() {
   const router = useRouter();
-  const [finalAnswers, setFinalAnswers] = useState<any>(null);
+  const [finalAnswers, setFinalAnswers] = useState<Record<string, unknown> | null>(null);
 
   useEffect(() => {
     const storedAnswers = sessionStorage.getItem("finalAnswers");

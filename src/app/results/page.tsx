@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import toast, { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 import { QUESTIONS, type ValidationResult, type Answer } from "@/types/questions";
 
 type QuestionStatus = "mismatch" | "confirmed" | "changed" | "match";
