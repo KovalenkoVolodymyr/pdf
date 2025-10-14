@@ -137,11 +137,14 @@ export default function Home() {
       <div className="min-h-screen bg-grey-50 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
         <div className="bg-white shadow rounded-lg p-8">
-          <h1 className="text-3xl font-bold text-grey-900 mb-8">
-            Architectural Plan Validation
+          <h1 className="text-2xl font-bold text-grey-900">
+            Architectural Plan Validation AI Demo
           </h1>
+          <div className="text-base font-medium text-grey-700">
+            Created by Bilberrry for MBP
+          </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6 mt-8">
             {/* Questions */}
             <div className="space-y-4">
               {QUESTIONS.map((question, index) => (

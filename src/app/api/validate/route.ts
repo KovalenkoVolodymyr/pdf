@@ -7,19 +7,22 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-const PROMPT = `I want you to read through the attached architectural plan, and provide me yes or no answers to the following questions, and include a brief reasoning to your answer that does not exceed more than 300 characters.
+const PROMPT = `I want you to read through the attached architectural plan, and provide me yes or no answers to the following questions. For each answer, provide a detailed reasoning (300-500 characters) that includes specific references to the plan and technical details supporting your answer.
 
 Questions:
 ${QUESTIONS.map((q, i) => `${i}. ${q}`).join("\n")}
 
 Please respond ONLY with valid JSON in the following format (use question numbers as keys):
 {
-  "0": {"answer": "yes", "reasoning": "brief explanation"},
-  "1": {"answer": "no", "reasoning": "brief explanation"},
-  "2": {"answer": "yes", "reasoning": "brief explanation"}
+  "0": {"answer": "yes", "reasoning": "detailed explanation with specific references"},
+  "1": {"answer": "no", "reasoning": "detailed explanation with specific references"},
+  "2": {"answer": "yes", "reasoning": "detailed explanation with specific references"}
 }
 
-IMPORTANT: Use numbers 0-7 as keys, matching the question numbers above.`;
+IMPORTANT:
+- Use numbers 0-7 as keys, matching the question numbers above
+- Each reasoning should be 300-500 characters long
+- Include specific details from the plan to support your answer`;
 
 export async function POST(request: NextRequest) {
   try {

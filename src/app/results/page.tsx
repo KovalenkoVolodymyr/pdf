@@ -253,8 +253,8 @@ export default function ResultsPage() {
                       </div>
                       {aiAnswer?.reasoning && (
                         <div className="mt-3 pt-3 border-t border-grey-200">
-                          <p className="text-xs text-grey-600 italic">
-                            <span className="font-semibold not-italic">
+                          <p className="text-xs text-grey-700 italic">
+                            <span className="font-semibold not-italic text-grey-900">
                               Reasoning:
                             </span>{" "}
                             {aiAnswer.reasoning}
