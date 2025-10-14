@@ -1,8 +1,46 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Accent Primary Colors */
+  --accent-primary-dark: #0027D4;
+  --accent-primary-default: #0145F2;
+  --accent-primary-light: #296DFF;
+
+  /* Base Colors */
+  --base-black: #1E1E1E;
+  --base-grey-200: #5A5A5A;
+  --base-grey-300: #6E6E6E;
+  --base-grey-400: #828282;
+  --base-grey-600: #9F9F9F;
+  --base-grey-700: #BEC0C3;
+  --base-grey-800: #DCDEE1;
+  --base-grey-900: #EBEDF0;
+  --base-grey-1000: #F5F6F7;
+  --base-white: #FFFFFF;
+
+  /* Base Colors with Opacity */
+  --base-overlay-dark: #1B21272E;
+  --base-overlay-medium: #1B21271F;
+  --base-overlay-light: #1B21270A;
+  --base-black-overlay-medium: #1E1E1E26;
+  --base-black-overlay-light: #1E1E1E0D;
+
+  /* Tint Success Colors */
+  --tint-success: #04A400;
+  --tint-success-light: #E4FAE1;
+
+  /* Tint Error Colors */
+  --tint-error-dark: #900B09;
+  --tint-error: #D51010;
+  --tint-error-light: #FEE9E7;
+
+  /* Tint Alert Colors */
+  --tint-alert: #F79726;
+  --tint-alert-light: #FFECBB;
+
+  /* Legacy mappings for compatibility */
+  --background: var(--base-white);
+  --foreground: var(--base-black);
 }
 
 @theme inline {
@@ -10,12 +48,38 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Accent Colors */
+  --color-primary: var(--accent-primary-default);
+  --color-primary-dark: var(--accent-primary-dark);
+  --color-primary-light: var(--accent-primary-light);
+
+  /* Base Colors */
+  --color-black: var(--base-black);
+  --color-white: var(--base-white);
+  --color-grey-200: var(--base-grey-200);
+  --color-grey-300: var(--base-grey-300);
+  --color-grey-400: var(--base-grey-400);
+  --color-grey-600: var(--base-grey-600);
+  --color-grey-700: var(--base-grey-700);
+  --color-grey-800: var(--base-grey-800);
+  --color-grey-900: var(--base-grey-900);
+  --color-grey-1000: var(--base-grey-1000);
+
+  /* Tint Colors */
+  --color-success: var(--tint-success);
+  --color-success-light: var(--tint-success-light);
+  --color-error: var(--tint-error);
+  --color-error-dark: var(--tint-error-dark);
+  --color-error-light: var(--tint-error-light);
+  --color-alert: var(--tint-alert);
+  --color-alert-light: var(--tint-alert-light);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--base-black);
+    --foreground: var(--base-grey-900);
   }
 }
 
@@ -48,4 +112,353 @@ body {
 
 .delay-2000 {
   animation-delay: 0.6s;
+}
+
+/* Custom utility classes using UI-kit colors */
+
+/* Background Colors */
+.bg-primary { background-color: var(--accent-primary-default); }
+.bg-primary-light { background-color: var(--accent-primary-light); }
+.bg-primary-dark { background-color: var(--accent-primary-dark); }
+
+.bg-grey-50 { background-color: var(--base-grey-1000); }
+.bg-grey-100 { background-color: var(--base-grey-900); }
+.bg-grey-200 { background-color: var(--base-grey-800); }
+.bg-grey-300 { background-color: var(--base-grey-700); }
+.bg-grey-400 { background-color: var(--base-grey-600); }
+.bg-grey-500 { background-color: var(--base-grey-400); }
+.bg-grey-600 { background-color: var(--base-grey-400); }
+.bg-grey-700 { background-color: var(--base-grey-700); }
+.bg-grey-1000 { background-color: var(--base-grey-1000); }
+
+.bg-success-light { background-color: var(--tint-success-light); }
+.bg-error-light { background-color: var(--tint-error-light); }
+.bg-alert-light { background-color: var(--tint-alert-light); }
+
+/* Additional success/error/alert backgrounds */
+.bg-success-100 { background-color: var(--tint-success-light); }
+.bg-error-100 { background-color: var(--tint-error-light); }
+.bg-alert-100 { background-color: var(--tint-alert-light); }
+.bg-alert-200 { background-color: var(--tint-alert-light); }
+.bg-alert-50 { background-color: #FFF8E6; }
+
+/* Primary backgrounds */
+.bg-primary-100 { background-color: #E8EEFF; }
+.bg-primary-200 { background-color: #B8CFFF; }
+
+/* Text Colors */
+.text-primary { color: var(--accent-primary-default); }
+.text-primary-light { color: var(--accent-primary-light); }
+.text-primary-dark { color: var(--accent-primary-dark); }
+
+.text-base-black { color: var(--base-black); }
+
+.text-grey-300 { color: var(--base-grey-300); }
+.text-grey-400 { color: var(--base-grey-400); }
+.text-grey-500 { color: var(--base-grey-400); }
+.text-grey-600 { color: var(--base-grey-600); }
+.text-grey-700 { color: var(--base-grey-300); }
+.text-grey-900 { color: var(--base-black); }
+
+.text-success { color: var(--tint-success); }
+.text-success-800 { color: #036A00; }
+.text-error { color: var(--tint-error); }
+.text-error-dark { color: var(--tint-error-dark); }
+.text-error-800 { color: var(--tint-error-dark); }
+.text-alert { color: var(--tint-alert); }
+.text-alert-700 { color: #C57818; }
+
+/* Primary text colors */
+.text-primary-700 { color: var(--accent-primary-dark); }
+
+/* Border Colors */
+.border-primary { border-color: var(--accent-primary-default); }
+.border-primary-light { border-color: var(--accent-primary-light); }
+.border-primary-200 { border-color: #B8CFFF; }
+.border-primary-300 { border-color: var(--accent-primary-light); }
+
+.border-grey-200 { border-color: var(--base-grey-800); }
+.border-grey-300 { border-color: var(--base-grey-700); }
+
+.border-success { border-color: var(--tint-success); }
+.border-success-300 { border-color: #06D600; }
+.border-error { border-color: var(--tint-error); }
+.border-error-light { border-color: var(--tint-error-light); }
+.border-alert { border-color: var(--tint-alert); }
+.border-alert-200 { border-color: var(--tint-alert-light); }
+.border-alert-300 { border-color: var(--tint-alert); }
+
+/* Outline Colors */
+.outline-success { outline-color: var(--tint-success); }
+.outline-primary { outline-color: var(--accent-primary-default); }
+.outline-primary-dark { outline-color: var(--accent-primary-dark); }
+.outline-grey-700 { outline-color: var(--base-grey-700); }
+
+/* Hover States */
+.hover\:bg-primary:hover { background-color: var(--accent-primary-default); }
+.hover\:bg-primary-dark:hover { background-color: var(--accent-primary-dark); }
+.hover\:bg-grey-700:hover { background-color: var(--base-grey-700); }
+.hover\:bg-success-100:hover { background-color: var(--tint-success-light); }
+.hover\:bg-success-200:hover { background-color: #C5F5C2; }
+.hover\:bg-primary-100:hover { background-color: #E8EEFF; }
+.hover\:bg-primary-200:hover { background-color: #B8CFFF; }
+.hover\:bg-error-50:hover { background-color: #FCDCDA; }
+
+/* Primary button with light background */
+.bg-primary-50 {
+  background-color: rgba(41, 109, 255, 0.1);
+}
+
+/* Focus ring colors */
+.focus\:ring-primary:focus {
+  --tw-ring-color: var(--accent-primary-default);
+}
+
+/* Radio input colors - Custom styling based on Figma design */
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--accent-primary-default);
+  border-radius: 50%;
+  background-color: var(--base-white);
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+input[type="radio"]:checked {
+  background-color: var(--accent-primary-default);
+  border-color: var(--accent-primary-default);
+}
+
+input[type="radio"]:checked::before {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: var(--base-white);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input[type="radio"]:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border-color: var(--base-grey-300);
+}
+
+input[type="radio"]:disabled:checked {
+  background-color: var(--accent-primary-default);
+  border-color: var(--accent-primary-default);
+}
+
+input[type="radio"]:hover:not(:disabled) {
+  border-color: var(--accent-primary-light);
+}
+
+input[type="radio"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(1, 69, 242, 0.1);
+}
+
+/* File input colors */
+.file\:border-primary-light::file-selector-button { border-color: var(--accent-primary-light); }
+.file\:text-primary-dark::file-selector-button { color: var(--accent-primary-dark); }
+.hover\:file\:bg-primary-50:hover::file-selector-button { background-color: rgba(41, 109, 255, 0.1); }
+
+/* Button Styles - Based on Figma UI Kit
+ *
+ * Usage examples:
+ * - Primary: <button className="btn btn-primary">Submit</button>
+ * - Secondary: <button className="btn btn-secondary">Cancel</button>
+ * - Tertiary: <button className="btn btn-tertiary">Learn More</button>
+ * - Ghost: <button className="btn btn-ghost">Link</button>
+ * - With Icon: <button className="btn btn-primary"><span className="btn-icon">🔍</span>Search</button>
+ * - Small: <button className="btn btn-primary btn-small">Save</button>
+ * - Success: <button className="btn btn-success">Confirm</button>
+ */
+.btn {
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  outline: none;
+}
+
+/* Primary Buttons (Filled) */
+.btn-primary {
+  background-color: var(--accent-primary-default);
+  color: var(--base-white);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--accent-primary-light);
+}
+
+.btn-primary:active:not(:disabled) {
+  background-color: var(--accent-primary-dark);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Secondary Buttons (Outlined) */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--accent-primary-default);
+  outline: 1px solid var(--accent-primary-default);
+  outline-offset: -1px;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: rgba(1, 69, 242, 0.1);
+  color: var(--accent-primary-light);
+  outline-color: var(--accent-primary-light);
+}
+
+.btn-secondary:active:not(:disabled) {
+  background-color: rgba(1, 69, 242, 0.1);
+  color: var(--accent-primary-default);
+  outline-color: var(--accent-primary-default);
+}
+
+.btn-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  color: var(--base-black);
+  outline-color: var(--base-black);
+}
+
+/* Tertiary Buttons (Border) */
+.btn-tertiary {
+  background-color: transparent;
+  color: var(--accent-primary-default);
+  border: 1px solid var(--accent-primary-default);
+}
+
+.btn-tertiary:hover:not(:disabled) {
+  background-color: rgba(1, 69, 242, 0.1);
+  color: var(--accent-primary-light);
+  border-color: var(--accent-primary-light);
+}
+
+.btn-tertiary:active:not(:disabled) {
+  background-color: rgba(1, 69, 242, 0.1);
+  color: var(--accent-primary-default);
+  border-color: var(--accent-primary-default);
+}
+
+.btn-tertiary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  color: var(--base-black);
+  border-color: var(--base-black);
+}
+
+/* Ghost Buttons (Minimal) */
+.btn-ghost {
+  background-color: transparent;
+  color: var(--accent-primary-default);
+  padding: 2px 4px;
+  height: auto;
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background-color: rgba(1, 69, 242, 0.05);
+  color: var(--accent-primary-light);
+}
+
+.btn-ghost:active:not(:disabled) {
+  background-color: rgba(1, 69, 242, 0.05);
+  color: var(--accent-primary-dark);
+}
+
+.btn-ghost:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Button icon sizes */
+.btn-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.btn-ghost .btn-icon {
+  width: 14px;
+  height: 14px;
+}
+
+/* Button variants */
+.btn-light {
+  background-color: var(--accent-primary-light);
+}
+
+.btn-dark {
+  background-color: var(--accent-primary-dark);
+}
+
+/* Success button */
+.btn-success {
+  background-color: var(--tint-success-light);
+  color: var(--tint-success);
+  border: 1px solid var(--tint-success);
+}
+
+.btn-success:hover:not(:disabled) {
+  background-color: #C5F5C2;
+}
+
+/* Alert button */
+.btn-alert {
+  background-color: var(--tint-alert-light);
+  color: var(--tint-alert);
+  border: 1px solid var(--tint-alert);
+}
+
+.btn-alert:hover:not(:disabled) {
+  background-color: #FFE5A8;
+}
+
+/* Error button */
+.btn-error {
+  background-color: var(--tint-error-light);
+  color: var(--tint-error-dark);
+  border: 1px solid var(--tint-error);
+}
+
+.btn-error:hover:not(:disabled) {
+  background-color: #FCDCDA;
+}
+
+/* Button size variants */
+.btn-small {
+  height: 28px;
+  padding: 0 12px;
+  font-size: 12px;
+}
+
+.btn-large {
+  height: 44px;
+  padding: 0 24px;
+  font-size: 16px;
 }

@@ -31,21 +31,21 @@ export default function ConfirmationPage() {
 
   if (!finalAnswers) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-gray-600">Loading...</div>
+      <div className="min-h-screen bg-grey-50 flex items-center justify-center">
+        <div className="text-grey-600">Loading...</div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-grey-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
         <div className="bg-white shadow rounded-lg p-8">
           <div className="text-center">
             {/* Success Icon */}
-            <div className="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-6">
+            <div className="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-success-100 mb-6">
               <svg
-                className="h-10 w-10 text-green-600"
+                className="h-10 w-10 text-success"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -60,21 +60,20 @@ export default function ConfirmationPage() {
             </div>
 
             {/* Title */}
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">
+            <h1 className="text-3xl font-bold text-grey-900 mb-4">
               Plan Sent Successfully!
             </h1>
 
             {/* Message */}
-            <p className="text-gray-600 mb-8">
+            <p className="text-grey-600 mb-8">
               Your architectural plan has been sent for review. You will receive a confirmation email shortly.
             </p>
 
             {/* Back to Home Button */}
             <button
+              type="button"
               onClick={handleBackToHome}
-              className="bg-blue-500 text-white py-3 px-8 rounded-md
-                font-semibold text-sm hover:bg-blue-600 cursor-pointer
-                transition-colors duration-200"
+              className="btn btn-primary"
             >
               Submit Another Plan
             </button>
